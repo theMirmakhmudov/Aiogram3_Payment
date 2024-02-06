@@ -32,8 +32,7 @@ async def cmd_start(message: types.Message):
 
 @dp.message(F.text == "Telefonlar")
 async def cmd_phones(message: types.Message):
-    album_builder = MediaGroupBuilder(
-        caption="<b>Nomi: Infinix Hot 30 Play 📱\nXotira: 16/128 GB 💾\nNarxi: 1,679,000 UZS</b> 💸")
+    album_builder = MediaGroupBuilder()
     album_builder.add(
         type="photo",
         media=FSInputFile("images/photo1.jpg"))
@@ -48,7 +47,8 @@ async def cmd_phones(message: types.Message):
         media=FSInputFile("images/photo4.jpg"))
 
     await message.answer_media_group(media=album_builder.build())
-    await message.reply("Sotib olish uchun bosing 🔝",reply_markup=inline_buttons.inline_btn)
+    await message.reply("<b>Nomi: Infinix Hot 30 Play 📱\nXotira: 16/128 GB 💾\nNarxi: 1,679,000 UZS</b> 💸",
+                        reply_markup=inline_buttons.inline_btn)
 
 
 dp.callback_query.register(order1, F.data == "Infinix")
