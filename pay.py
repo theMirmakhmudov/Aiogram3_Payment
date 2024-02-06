@@ -4,8 +4,6 @@ from aiogram.types import LabeledPrice, PreCheckoutQuery, CallbackQuery
 from config import Payment_Token
 
 dp = Dispatcher()
-data = []
-users_ids = []
 
 
 # -------------------------------------------- Start order1 ---------------------------------------------#
